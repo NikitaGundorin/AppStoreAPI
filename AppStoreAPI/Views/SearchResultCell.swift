@@ -10,34 +10,51 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
+    var appResult: Result! {
+        didSet {
+            nameLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+            ratingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
+            
+            let iconUrl = URL(string: appResult.artworkUrl100)
+            imageView.sd_setImage(with: iconUrl)
+            
+            for (i, imageView) in screenshotImageViews.enumerated() {
+                if appResult.screenshotUrls.count > i {
+                    imageView.sd_setImage(with: URL(string: appResult.screenshotUrls[i]))
+                }
+            }
+        }
+    }
+    private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .red
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
         iv.layer.cornerRadius = 12
+        iv.clipsToBounds = true
         return iv
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "APP NAME"
         return label
     }()
 
-    let categoryLabel: UILabel = {
+    private let categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Photos & Videos"
         return label
     }()
 
-    let ratingsLabel: UILabel = {
+    private let ratingsLabel: UILabel = {
         let label = UILabel()
         label.text = "9.2M"
         return label
     }()
 
-    let getButton: UIButton = {
+    private let getButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("GET", for: .normal)
         btn.titleLabel?.font = .boldSystemFont(ofSize: 14)
@@ -47,6 +64,10 @@ class SearchResultCell: UICollectionViewCell {
         btn.layer.cornerRadius = 16
         return btn
     }()
+    
+    private var screenshotImageViews: [UIImageView] {
+        [screenshot1ImageView, screenshot2ImageView, screenshot3ImageView]
+    }
     
     lazy var screenshot1ImageView = createScreenshotImageView()
     lazy var screenshot2ImageView = createScreenshotImageView()
@@ -88,7 +109,12 @@ class SearchResultCell: UICollectionViewCell {
     
     private func createScreenshotImageView() -> UIImageView {
         let iv = UIImageView()
-        iv.backgroundColor = .blue
+        iv.backgroundColor = .lightGray
+        iv.layer.cornerRadius = 8
+        iv.clipsToBounds = true
+        iv.layer.borderWidth = 0.5
+        iv.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        iv.contentMode = .scaleAspectFill
         return iv
     }
 }

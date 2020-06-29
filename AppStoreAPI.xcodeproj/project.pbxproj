@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */; };
 		726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */; };
 		726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */; };
+		726A5CEB24A95B6600C64BD4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CEA24A95B6600C64BD4 /* SearchResult.swift */; };
+		726A5CEE24A95F8700C64BD4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CED24A95F8700C64BD4 /* Service.swift */; };
+		726A5CF124A9648B00C64BD4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 726A5CF024A9648B00C64BD4 /* SDWebImage */; };
 		72CD602224A912890074E697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD602124A912890074E697 /* AppDelegate.swift */; };
 		72CD602B24A9128A0074E697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72CD602A24A9128A0074E697 /* Assets.xcassets */; };
 		72CD603624A9134D0074E697 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD603524A9134D0074E697 /* BaseTabBarController.swift */; };
@@ -20,6 +23,8 @@
 		726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		726A5CEA24A95B6600C64BD4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		726A5CED24A95F8700C64BD4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		72CD601E24A912890074E697 /* AppStoreAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CD602124A912890074E697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CD602A24A9128A0074E697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726A5CF124A9648B00C64BD4 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		726A5CE924A95B5300C64BD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				726A5CEA24A95B6600C64BD4 /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		726A5CEC24A95F7B00C64BD4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				726A5CED24A95F8700C64BD4 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		72CD601524A912890074E697 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +97,8 @@
 		72CD602024A912890074E697 /* AppStoreAPI */ = {
 			isa = PBXGroup;
 			children = (
+				726A5CEC24A95F7B00C64BD4 /* Service */,
+				726A5CE924A95B5300C64BD4 /* Model */,
 				726A5CE424A94B2900C64BD4 /* Helpers */,
 				726A5CE124A92A6E00C64BD4 /* Views */,
 				72CD603724A91EA00074E697 /* Controllers */,
@@ -110,6 +134,9 @@
 			dependencies = (
 			);
 			name = AppStoreAPI;
+			packageProductDependencies = (
+				726A5CF024A9648B00C64BD4 /* SDWebImage */,
+			);
 			productName = AppStoreAPI;
 			productReference = 72CD601E24A912890074E697 /* AppStoreAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 72CD601524A912890074E697;
+			packageReferences = (
+				726A5CEF24A9648B00C64BD4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 72CD601F24A912890074E697 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,6 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CD603624A9134D0074E697 /* BaseTabBarController.swift in Sources */,
+				726A5CEE24A95F8700C64BD4 /* Service.swift in Sources */,
+				726A5CEB24A95B6600C64BD4 /* SearchResult.swift in Sources */,
 				72CD603B24A91EE60074E697 /* AppsSearchViewController.swift in Sources */,
 				72CD602224A912890074E697 /* AppDelegate.swift in Sources */,
 				726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */,
@@ -349,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		726A5CEF24A9648B00C64BD4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		726A5CF024A9648B00C64BD4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726A5CEF24A9648B00C64BD4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72CD601624A912890074E697 /* Project object */;
 }

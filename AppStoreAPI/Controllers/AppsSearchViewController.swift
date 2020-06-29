@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 class AppsSearchViewController: UICollectionViewController {
 
     private let cellId = "cell"
+    private var appResults: [Result] = []
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -25,14 +27,19 @@ class AppsSearchViewController: UICollectionViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        fetchITunesApps()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? SearchResultCell
+            else { return UICollectionViewCell() }
+        
+        cell.appResult = appResults[indexPath.item]
+        
         return cell
     }
     
@@ -44,6 +51,19 @@ class AppsSearchViewController: UICollectionViewController {
         }
         
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
+    }
+    
+    private func fetchITunesApps() {
+        Service.shared.fetchApps { results, error in
+            if let error = error {
+                print("Failed to fetch results: ", error)
+                return
+            }
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 
