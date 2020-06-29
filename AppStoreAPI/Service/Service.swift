@@ -13,8 +13,8 @@ class Service {
     
     private init() {}
     
-    func fetchApps( completion: @escaping ([Result], Error?) -> ()) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=instagram&entity=software") else { return }
+    func fetchApps(searchTerm: String, completion: @escaping ([Result], Error?) -> ()) {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=software") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Failed to fetch apps: ", error)
