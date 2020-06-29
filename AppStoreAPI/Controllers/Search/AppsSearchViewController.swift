@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 
-class AppsSearchViewController: UICollectionViewController {
+class AppsSearchViewController: BaseListController {
 
     private let cellId = "cell"
     private var appResults: [Result] = []
@@ -23,14 +23,6 @@ class AppsSearchViewController: UICollectionViewController {
         label.font = .systemFont(ofSize: 20)
         return label
     }()
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
