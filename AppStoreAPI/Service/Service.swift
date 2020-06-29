@@ -33,4 +33,24 @@ class Service {
             
         }.resume()
     }
+
+    func fetchAppGroup(urlString: String, number: Int, completion: @escaping (AppGroup?, Error?, Int) -> ()) {
+        guard let url = URL(string: urlString) else { return }
+             
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Failed to fetch apps: ", error)
+                completion(nil, error, number)
+                return
+            }
+            guard let data = data else { return }
+            do {
+                let appGroup = try JSONDecoder().decode(AppGroup.self, from: data)
+                completion(appGroup, nil, number)
+            } catch let jsonError {
+                print("Failed to decode JSON: ", jsonError)
+                completion(nil, jsonError, number)
+            }
+        }.resume()
+    }
 }

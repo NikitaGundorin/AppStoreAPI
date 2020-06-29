@@ -10,9 +10,9 @@ import UIKit
 
 class AppRowCell: UICollectionViewCell {
     
-    private let appIconImageView = UIImageView(cornerRadius: 8)
-    private let nameLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 20))
-    private let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
+    let appIconImageView = UIImageView(cornerRadius: 8)
+    let nameLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 20))
+    let companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 13))
     private let getButton = UIButton(title: "GET")
     override init(frame: CGRect) {
         super.init(frame: frame)
