@@ -21,6 +21,9 @@
 		727AA3A524AA3C10004C37EF /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3A424AA3C10004C37EF /* AppRowCell.swift */; };
 		727AA3A724AA3D56004C37EF /* UIImageView+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3A624AA3D56004C37EF /* UIImageView+init.swift */; };
 		727AA3A924AA3DE0004C37EF /* UIButton+inir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3A824AA3DE0004C37EF /* UIButton+inir.swift */; };
+		727AA3AB24AA428F004C37EF /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3AA24AA428F004C37EF /* AppsPageHeader.swift */; };
+		727AA3AD24AA4437004C37EF /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3AC24AA4437004C37EF /* AppsHeaderHorizontalController.swift */; };
+		727AA3AF24AA4641004C37EF /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3AE24AA4641004C37EF /* AppsHeaderCell.swift */; };
 		72CD602224A912890074E697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD602124A912890074E697 /* AppDelegate.swift */; };
 		72CD602B24A9128A0074E697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72CD602A24A9128A0074E697 /* Assets.xcassets */; };
 		72CD603624A9134D0074E697 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD603524A9134D0074E697 /* BaseTabBarController.swift */; };
@@ -41,6 +44,9 @@
 		727AA3A424AA3C10004C37EF /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		727AA3A624AA3D56004C37EF /* UIImageView+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+init.swift"; sourceTree = "<group>"; };
 		727AA3A824AA3DE0004C37EF /* UIButton+inir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+inir.swift"; sourceTree = "<group>"; };
+		727AA3AA24AA428F004C37EF /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
+		727AA3AC24AA4437004C37EF /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
+		727AA3AE24AA4641004C37EF /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		72CD601E24A912890074E697 /* AppStoreAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CD602124A912890074E697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CD602A24A9128A0074E697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			children = (
 				726A5CF324AA042F00C64BD4 /* AppsPageViewController.swift */,
 				727AA3A224AA358F004C37EF /* AppsHorizontalController.swift */,
+				727AA3AC24AA4437004C37EF /* AppsHeaderHorizontalController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -112,6 +119,8 @@
 			children = (
 				727AA39E24AA0700004C37EF /* AppsGroupCell.swift */,
 				727AA3A424AA3C10004C37EF /* AppRowCell.swift */,
+				727AA3AA24AA428F004C37EF /* AppsPageHeader.swift */,
+				727AA3AE24AA4641004C37EF /* AppsHeaderCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -251,9 +260,12 @@
 				727AA3A524AA3C10004C37EF /* AppRowCell.swift in Sources */,
 				72CD603B24A91EE60074E697 /* AppsSearchViewController.swift in Sources */,
 				72CD602224A912890074E697 /* AppDelegate.swift in Sources */,
+				727AA3AD24AA4437004C37EF /* AppsHeaderHorizontalController.swift in Sources */,
+				727AA3AB24AA428F004C37EF /* AppsPageHeader.swift in Sources */,
 				727AA3A724AA3D56004C37EF /* UIImageView+init.swift in Sources */,
 				726A5CF424AA042F00C64BD4 /* AppsPageViewController.swift in Sources */,
 				726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */,
+				727AA3AF24AA4641004C37EF /* AppsHeaderCell.swift in Sources */,
 				726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */,
 				727AA3A124AA0A0E004C37EF /* UILabel+init.swift in Sources */,
 				726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */,
