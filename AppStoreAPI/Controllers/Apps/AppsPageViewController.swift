@@ -13,10 +13,26 @@ class AppsPageViewController: BaseListController {
     private let cellId = "appsGroupCell"
     private let headerId = "headerId"
     private var groups = [AppGroup]()
+    private var socialApps = [SocialApp]()
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv: UIActivityIndicatorView = {
+            if #available(iOS 13, *) {
+                return UIActivityIndicatorView(style: .large)
+            } else {
+                let aiv = UIActivityIndicatorView(style: .whiteLarge)
+                aiv.color = .black
+                return aiv
+            }
+        }()
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         setupCollectionView()
         fetchData()
     }
@@ -35,12 +51,21 @@ class AppsPageViewController: BaseListController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? AppsPageHeader
+            else { return UICollectionReusableView() }
+        
+        header.appHeaderHorizontalController.apps = socialApps
+        
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: view.frame.width, height: 300)
+    }
+    
+    private func setupLayout() {
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.fillSuperview()
     }
     
     private func setupCollectionView() {
@@ -79,7 +104,18 @@ class AppsPageViewController: BaseListController {
             Service.shared.fetchAppGroup(urlString: urlString, number: number, completion: completionHandler)
         }
         
+        dispatchGroup.enter()
+        Service.shared.fetchSocialApps { (apps, error) in
+            dispatchGroup.leave()
+            if let error = error {
+                print("Failed to fetch social apps: ", error)
+                return
+            }
+            self.socialApps = apps
+        }
+        
         dispatchGroup.notify(queue: .main) {
+            self.activityIndicatorView.stopAnimating()
             results.forEach { appGroup in
                 if let appGroup = appGroup {
                     self.groups.append(appGroup)

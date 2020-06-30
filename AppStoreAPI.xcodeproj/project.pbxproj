@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7240C72324AA619B007948F8 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72224AA619B007948F8 /* SocialApp.swift */; };
 		726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */; };
 		726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */; };
 		726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7240C72224AA619B007948F8 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				727AA3B024AA4E17004C37EF /* AppGroup.swift */,
 				727AA3B224AA4E2C004C37EF /* Feed.swift */,
 				727AA3B424AA4E6E004C37EF /* FeedResult.swift */,
+				7240C72224AA619B007948F8 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7240C72324AA619B007948F8 /* SocialApp.swift in Sources */,
 				727AA3A324AA358F004C37EF /* AppsHorizontalController.swift in Sources */,
 				72CD603624A9134D0074E697 /* BaseTabBarController.swift in Sources */,
 				726A5CF624AA04C400C64BD4 /* BaseListController.swift in Sources */,
