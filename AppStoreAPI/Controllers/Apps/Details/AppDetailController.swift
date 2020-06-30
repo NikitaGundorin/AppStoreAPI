@@ -21,7 +21,8 @@ class AppDetailController: BaseListController {
         }
     }
     private var app: Result?
-    private let cellId = "appDetailCell"
+    private let detailCellId = "appDetailCell"
+    private let previewCellId = "appPreviewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +32,18 @@ class AppDetailController: BaseListController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? AppDetailCell
-            else { return UICollectionViewCell() }
-        
-        cell.app = app
-        return cell
+        if indexPath.item == 0, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: detailCellId, for: indexPath) as? AppDetailCell {
+            cell.app = app
+            return cell
+        } else if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: previewCellId, for: indexPath) as? PreviewCell {
+            cell.horizontalController.app = app
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
     private func setupLayout() {
@@ -47,12 +51,16 @@ class AppDetailController: BaseListController {
     }
     
     private func setupCollectionView() {
-        collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
+        collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: previewCellId)
     }
 }
 
 extension AppDetailController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard indexPath.item == 0 else {
+            return .init(width: view.frame.width, height: 500)
+        }
         let height = CGFloat(1000)
         let dummyCell = AppDetailCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: height))
         dummyCell.app = app
