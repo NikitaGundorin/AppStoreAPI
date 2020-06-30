@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7240C72324AA619B007948F8 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72224AA619B007948F8 /* SocialApp.swift */; };
+		7240C72524ABABF5007948F8 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72424ABABF5007948F8 /* HorizontalSnappingController.swift */; };
+		7240C72724ABB000007948F8 /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72624ABB000007948F8 /* SnappingLayout.swift */; };
 		726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */; };
 		726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */; };
 		726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		7240C72224AA619B007948F8 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
+		7240C72424ABABF5007948F8 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
+		7240C72624ABB000007948F8 /* SnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
 		726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				727AA3A024AA0A0E004C37EF /* UILabel+init.swift */,
 				727AA3A624AA3D56004C37EF /* UIImageView+init.swift */,
 				727AA3A824AA3DE0004C37EF /* UIButton+inir.swift */,
+				7240C72624ABB000007948F8 /* SnappingLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				72C542D924AA05B80055B76F /* Search */,
 				72CD603524A9134D0074E697 /* BaseTabBarController.swift */,
 				726A5CF524AA04C400C64BD4 /* BaseListController.swift */,
+				7240C72424ABABF5007948F8 /* HorizontalSnappingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				727AA3B324AA4E2C004C37EF /* Feed.swift in Sources */,
 				727AA3AD24AA4437004C37EF /* AppsHeaderHorizontalController.swift in Sources */,
 				727AA3AB24AA428F004C37EF /* AppsPageHeader.swift in Sources */,
+				7240C72724ABB000007948F8 /* SnappingLayout.swift in Sources */,
 				727AA3A724AA3D56004C37EF /* UIImageView+init.swift in Sources */,
 				726A5CF424AA042F00C64BD4 /* AppsPageViewController.swift in Sources */,
 				726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */,
@@ -285,6 +292,7 @@
 				726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */,
 				727AA3A124AA0A0E004C37EF /* UILabel+init.swift in Sources */,
 				726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */,
+				7240C72524ABABF5007948F8 /* HorizontalSnappingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
