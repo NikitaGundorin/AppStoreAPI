@@ -70,12 +70,12 @@ class AppsSearchViewController: BaseListController {
     }
     
     private func fetchITunesApps(searchTerm: String) {
-        Service.shared.fetchApps(searchTerm: searchTerm) { results, error in
+        Service.shared.fetchApps(searchTerm: searchTerm) { result, error in
             if let error = error {
                 print("Failed to fetch results: ", error)
                 return
             }
-            self.appResults = results
+            self.appResults = result?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

@@ -111,7 +111,7 @@ class AppsPageViewController: BaseListController {
                 print("Failed to fetch social apps: ", error)
                 return
             }
-            self.socialApps = apps
+            self.socialApps = apps ?? []
         }
         
         dispatchGroup.notify(queue: .main) {
