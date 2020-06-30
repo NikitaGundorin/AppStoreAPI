@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7213CE5924ABC2F900E3BB3F /* UIStackView+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213CE5824ABC2F900E3BB3F /* UIStackView+init.swift */; };
 		7240C72324AA619B007948F8 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72224AA619B007948F8 /* SocialApp.swift */; };
 		7240C72524ABABF5007948F8 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72424ABABF5007948F8 /* HorizontalSnappingController.swift */; };
 		7240C72724ABB000007948F8 /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72624ABB000007948F8 /* SnappingLayout.swift */; };
+		7240C72A24ABBA00007948F8 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C72924ABBA00007948F8 /* AppDetailController.swift */; };
 		726A5CE324A92A8E00C64BD4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */; };
 		726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */; };
 		726A5CE824A94F5100C64BD4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */; };
@@ -18,6 +20,7 @@
 		726A5CF124A9648B00C64BD4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 726A5CF024A9648B00C64BD4 /* SDWebImage */; };
 		726A5CF424AA042F00C64BD4 /* AppsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CF324AA042F00C64BD4 /* AppsPageViewController.swift */; };
 		726A5CF624AA04C400C64BD4 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A5CF524AA04C400C64BD4 /* BaseListController.swift */; };
+		726F969B24ABBE7E00B04BA9 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F969A24ABBE7E00B04BA9 /* AppDetailCell.swift */; };
 		727AA39F24AA0700004C37EF /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA39E24AA0700004C37EF /* AppsGroupCell.swift */; };
 		727AA3A124AA0A0E004C37EF /* UILabel+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3A024AA0A0E004C37EF /* UILabel+init.swift */; };
 		727AA3A324AA358F004C37EF /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AA3A224AA358F004C37EF /* AppsHorizontalController.swift */; };
@@ -37,9 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7213CE5824ABC2F900E3BB3F /* UIStackView+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+init.swift"; sourceTree = "<group>"; };
 		7240C72224AA619B007948F8 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		7240C72424ABABF5007948F8 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		7240C72624ABB000007948F8 /* SnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
+		7240C72924ABBA00007948F8 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		726A5CE224A92A8E00C64BD4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		726A5CED24A95F8700C64BD4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		726A5CF324AA042F00C64BD4 /* AppsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageViewController.swift; sourceTree = "<group>"; };
 		726A5CF524AA04C400C64BD4 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		726F969A24ABBE7E00B04BA9 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		727AA39E24AA0700004C37EF /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		727AA3A024AA0A0E004C37EF /* UILabel+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+init.swift"; sourceTree = "<group>"; };
 		727AA3A224AA358F004C37EF /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7240C72824ABB9E2007948F8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7240C72924ABBA00007948F8 /* AppDetailController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		726A5CE124A92A6E00C64BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,11 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				726A5CE524A94B4800C64BD4 /* UIView+Layout.swift */,
-				726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */,
 				727AA3A024AA0A0E004C37EF /* UILabel+init.swift */,
 				727AA3A624AA3D56004C37EF /* UIImageView+init.swift */,
 				727AA3A824AA3DE0004C37EF /* UIButton+inir.swift */,
+				7213CE5824ABC2F900E3BB3F /* UIStackView+init.swift */,
 				7240C72624ABB000007948F8 /* SnappingLayout.swift */,
+				726A5CE724A94F5100C64BD4 /* VerticalStackView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -124,6 +139,7 @@
 		726A5CF224AA041E00C64BD4 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				7240C72824ABB9E2007948F8 /* Details */,
 				726A5CF324AA042F00C64BD4 /* AppsPageViewController.swift */,
 				727AA3A224AA358F004C37EF /* AppsHorizontalController.swift */,
 				727AA3AC24AA4437004C37EF /* AppsHeaderHorizontalController.swift */,
@@ -131,9 +147,18 @@
 			path = Apps;
 			sourceTree = "<group>";
 		};
+		726F969924ABBE6000B04BA9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				726F969A24ABBE7E00B04BA9 /* AppDetailCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		727AA39D24AA06DB004C37EF /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				726F969924ABBE6000B04BA9 /* Details */,
 				727AA39E24AA0700004C37EF /* AppsGroupCell.swift */,
 				727AA3A424AA3C10004C37EF /* AppRowCell.swift */,
 				727AA3AA24AA428F004C37EF /* AppsPageHeader.swift */,
@@ -283,9 +308,12 @@
 				727AA3B324AA4E2C004C37EF /* Feed.swift in Sources */,
 				727AA3AD24AA4437004C37EF /* AppsHeaderHorizontalController.swift in Sources */,
 				727AA3AB24AA428F004C37EF /* AppsPageHeader.swift in Sources */,
+				7213CE5924ABC2F900E3BB3F /* UIStackView+init.swift in Sources */,
 				7240C72724ABB000007948F8 /* SnappingLayout.swift in Sources */,
 				727AA3A724AA3D56004C37EF /* UIImageView+init.swift in Sources */,
+				7240C72A24ABBA00007948F8 /* AppDetailController.swift in Sources */,
 				726A5CF424AA042F00C64BD4 /* AppsPageViewController.swift in Sources */,
+				726F969B24ABBE7E00B04BA9 /* AppDetailCell.swift in Sources */,
 				726A5CE624A94B4800C64BD4 /* UIView+Layout.swift in Sources */,
 				727AA3B124AA4E17004C37EF /* AppGroup.swift in Sources */,
 				727AA3AF24AA4641004C37EF /* AppsHeaderCell.swift in Sources */,

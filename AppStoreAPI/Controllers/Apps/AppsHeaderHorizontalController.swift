@@ -41,14 +41,7 @@ class AppsHeaderHorizontalController: HorizontalSnappingController {
     }
     
     private func setupCollectionView() {
-        if #available(iOS 13, *) {
-            collectionView.backgroundColor = .systemBackground
-        } else {
-            collectionView.backgroundColor = .white
-        }
-        
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: cellId)
-        
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 0)
     }
 }

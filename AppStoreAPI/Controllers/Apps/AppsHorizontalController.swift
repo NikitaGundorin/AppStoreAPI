@@ -15,6 +15,7 @@ class AppsHorizontalController: HorizontalSnappingController {
             collectionView.reloadData()
         }
     }
+    var didSelectHandler: ((FeedResult) -> ())?
     private let cellId = "cellId"
     private let topBottomPadding = CGFloat(12)
     private let lineSpacing = CGFloat(10)
@@ -43,13 +44,13 @@ class AppsHorizontalController: HorizontalSnappingController {
         return appGroup?.feed.results.count ?? 0
     }
     
-    private func setupCollectionView() {
-        if #available(iOS 13, *) {
-            collectionView.backgroundColor = .systemBackground
-        } else {
-            collectionView.backgroundColor = .white
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appGroup?.feed.results[indexPath.item] {
+            didSelectHandler?(app)
         }
-        
+    }
+    
+    private func setupCollectionView() {
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 0)
     }

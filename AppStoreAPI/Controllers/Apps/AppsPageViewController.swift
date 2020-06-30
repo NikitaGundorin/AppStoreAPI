@@ -47,6 +47,12 @@ class AppsPageViewController: BaseListController {
         let appGroup = groups[indexPath.item]
         cell.titleLabel.text = appGroup.feed.title
         cell.horizontalController.appGroup = appGroup
+        cell.horizontalController.didSelectHandler = { [weak self] feedResult in
+            let vc = AppDetailController()
+            vc.appId = feedResult.id
+            vc.navigationItem.title = feedResult.name
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
         return cell
     }
     
@@ -69,12 +75,6 @@ class AppsPageViewController: BaseListController {
     }
     
     private func setupCollectionView() {
-        if #available(iOS 13, *) {
-            collectionView.backgroundColor = .systemBackground
-        } else {
-            collectionView.backgroundColor = .white
-        }
-        
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
