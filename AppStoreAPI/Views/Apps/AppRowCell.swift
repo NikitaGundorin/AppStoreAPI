@@ -27,7 +27,7 @@ class AppRowCell: UICollectionViewCell {
     private func setupLayout() {
         appIconImageView.constrainWidth(constant: 64)
         appIconImageView.constrainHeight(constant: 64)
-        getButton.backgroundColor = .lightGray
+        getButton.backgroundColor = UIColor(named: "getButtonBG")
         getButton.constrainWidth(constant: 80)
         getButton.constrainHeight(constant: 32)
         getButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
