@@ -46,6 +46,11 @@ class AppsSearchViewController: BaseListController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appDetailController = AppDetailController(appId: String(appResults[indexPath.item].trackId))
+        navigationController?.pushViewController(appDetailController, animated: true)
+    }
+    
     private func setupLayout() {
         view.addSubview(enterSearchTermLabel)
         enterSearchTermLabel.fillSuperview()

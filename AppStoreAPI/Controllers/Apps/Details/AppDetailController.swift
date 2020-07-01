@@ -10,35 +10,28 @@ import UIKit
 
 class AppDetailController: BaseListController {
     
-    var appId: String! {
-        didSet {
-            Service.shared.fetchGenericJSONData(urlString: "https://itunes.apple.com/lookup?id=\(appId ?? "")") { (result: SearchResult?, error) in
-                self.app = result?.results.first
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-            
-            let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId ?? "")/mostrecent/json"
-            Service.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, error) in
-                self.reviews = reviews
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-    }
+    let appId: String
     private var app: Result?
     private var reviews: Reviews?
     private let detailCellId = "appDetailCell"
     private let previewCellId = "appPreviewCell"
     private let reviewCellId = "appReviewCell"
     
+    init(appId: String) {
+        self.appId = appId
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
         setupCollectionView()
+        fetchData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,6 +60,23 @@ class AppDetailController: BaseListController {
         collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
         collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: previewCellId)
         collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: reviewCellId)
+    }
+    
+    private func fetchData() {
+        Service.shared.fetchGenericJSONData(urlString: "https://itunes.apple.com/lookup?id=\(appId)") { (result: SearchResult?, error) in
+            self.app = result?.results.first
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
+        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/mostrecent/json"
+        Service.shared.fetchGenericJSONData(urlString: reviewsUrl) { (reviews: Reviews?, error) in
+            self.reviews = reviews
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 
