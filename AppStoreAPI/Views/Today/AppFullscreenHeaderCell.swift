@@ -29,8 +29,8 @@ class AppFullscreenHeaderCell: UITableViewCell {
     
     private func setupLayout() {
         addSubview(todayCell)
-        todayCell.layer.shadowOpacity = 0
-        todayCell.layer.cornerRadius = 0
+        todayCell.backgroundView?.layer.shadowOpacity = 0
+        todayCell.backgroundView?.layer.cornerRadius = 0
         todayCell.fillSuperview()
         
         addSubview(closeButton)

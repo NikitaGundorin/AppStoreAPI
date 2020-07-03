@@ -13,7 +13,7 @@ class TodayMultipleAppsCell: BaseTodayCell {
         didSet {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
-            backgroundColor = todayItem.backgroundColor
+            backgroundView?.backgroundColor = todayItem.backgroundColor
             multipleAppsController.apps = todayItem.apps
         }
     }
@@ -33,10 +33,6 @@ class TodayMultipleAppsCell: BaseTodayCell {
     }
     
     private func setupLayout() {
-        layer.cornerRadius = 16
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 10
         let stackView = VerticalStackView(arrangedSubviews: [
             categoryLabel,
             titleLabel,

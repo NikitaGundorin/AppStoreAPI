@@ -15,7 +15,7 @@ class TodayCell: BaseTodayCell {
             categoryLabel.text = todayItem.category
             titleLabel.text = todayItem.title
             descriptionLabel.text = todayItem.description
-            backgroundColor = todayItem.backgroundColor
+            backgroundView?.backgroundColor = todayItem.backgroundColor
         }
     }
     private let imageView = UIImageView(image: UIImage(named: "garden"))
@@ -35,10 +35,6 @@ class TodayCell: BaseTodayCell {
     }
     
     private func setupLayout() {
-        layer.cornerRadius = 16
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 10
         imageView.contentMode = .scaleAspectFill
         let imageContainerView = UIView()
         imageContainerView.addSubview(imageView)
