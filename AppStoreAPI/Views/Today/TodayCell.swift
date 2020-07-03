@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TodayCell: UICollectionViewCell {
-    var todayItem: TodayItem! {
+class TodayCell: BaseTodayCell {
+    override var todayItem: TodayItem! {
         didSet {
             imageView.image = todayItem.image
             categoryLabel.text = todayItem.category
