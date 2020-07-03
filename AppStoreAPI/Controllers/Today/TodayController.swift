@@ -258,6 +258,7 @@ class TodayController: BaseListController {
             self.navigationController?.isNavigationBarHidden = false
             
             self.appFullscreenController.closeButton.alpha = 0
+            self.appFullscreenController.floatingContainerView.alpha = 0
         }, completion: { _ in
             self.appFullscreenController.view.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
