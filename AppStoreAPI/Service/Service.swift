@@ -13,8 +13,8 @@ class Service {
     
     private init() {}
     
-    func fetchApps(searchTerm: String, completion: @escaping (SearchResult?, Error?) -> ()) {
-        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software"
+    func fetchApps(searchTerm: String, offset: Int = 0, completion: @escaping (SearchResult?, Error?) -> ()) {
+        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software&offset=\(offset)&limit=10"
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
 

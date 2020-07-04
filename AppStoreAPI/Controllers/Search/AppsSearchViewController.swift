@@ -11,7 +11,6 @@ import SDWebImage
 
 
 class AppsSearchViewController: BaseListController {
-
     private let cellId = "cell"
     private var appResults: [Result] = []
     private let searchController = UISearchController(searchResultsController: nil)
@@ -23,6 +22,8 @@ class AppsSearchViewController: BaseListController {
         label.font = .systemFont(ofSize: 20)
         return label
     }()
+    private var searchText = ""
+    private var isPaginating = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,11 @@ class AppsSearchViewController: BaseListController {
             else { return UICollectionViewCell() }
         
         cell.appResult = appResults[indexPath.item]
+        
+        if indexPath.item == appResults.count - 1 && !isPaginating {
+            isPaginating = true
+            fetchITunesApps()
+        }
         
         return cell
     }
@@ -68,16 +74,22 @@ class AppsSearchViewController: BaseListController {
         searchController.searchBar.delegate = self
     }
     
-    private func fetchITunesApps(searchTerm: String) {
-        Service.shared.fetchApps(searchTerm: searchTerm) { result, error in
+    private func fetchITunesApps(searchTerm: String? = nil) {
+        let offset = searchTerm == nil ? appResults.count : 0
+        Service.shared.fetchApps(searchTerm: searchTerm ?? searchText, offset: offset) { result, error in
             if let error = error {
                 print("Failed to fetch results: ", error)
                 return
             }
-            self.appResults = result?.results ?? []
+            if searchTerm == nil {
+                self.appResults += result?.results ?? []
+            } else {
+                self.appResults = result?.results ?? []
+            }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
+            self.isPaginating = false
         }
     }
 }
@@ -92,6 +104,7 @@ extension AppsSearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: {_ in
+            self.searchText = searchText
             self.fetchITunesApps(searchTerm: searchText)
         })
     }
